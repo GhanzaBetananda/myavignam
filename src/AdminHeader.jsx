@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-export default function AdminHeader({ active, setActive }) {
+export default function AdminHeader({ active, setActive, onLogout }) {
   const [openMenu, setOpenMenu] = useState(false)
   const menus = ['Dashboard', 'Kelola Pegawai', 'Kelola Cuti', 'Kelola UKOM', 'Akun']
 
@@ -63,7 +63,7 @@ export default function AdminHeader({ active, setActive }) {
 
         <button
           className="ml-1 hidden rounded-full bg-slate-900 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-orange-600 sm:block"
-          onClick={() => alert('Logout')}
+          onClick={onLogout}
         >
           Logout
         </button>
@@ -82,7 +82,7 @@ export default function AdminHeader({ active, setActive }) {
           ))}
           <button
             className="mt-2 block w-full rounded-full bg-slate-900 px-4 py-3 text-center text-[15px] font-semibold text-white sm:hidden"
-            onClick={() => alert('Logout')}
+            onClick={onLogout}
           >
             Logout
           </button>

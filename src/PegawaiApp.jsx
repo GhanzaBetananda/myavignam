@@ -7,12 +7,12 @@ import ProfilPage from './ProfilPage.jsx'
 import AkunPage from './AkunPage.jsx'
 import DashboardIntro from './components/DashboardIntro.jsx'
 
-export default function PegawaiApp() {
+export default function PegawaiApp({ onLogout }) {
   const [active, setActive] = useState('Dashboard')
 
   return (
     <>
-      <PegawaiHeader active={active} setActive={setActive} />
+      <PegawaiHeader active={active} setActive={setActive} onLogout={onLogout} />
       {active === 'Dashboard' ? (
         <DashboardIntro role="pegawai" onNavigate={setActive} />
       ) : active === 'Cuti' ? (

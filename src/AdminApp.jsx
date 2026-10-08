@@ -315,12 +315,12 @@ function KelolaUkom() {
   )
 }
 
-export default function AdminApp() {
+export default function AdminApp({ onLogout }) {
   const [active, setActive] = useState('Dashboard')
 
   return (
     <div className="min-h-screen bg-white text-slate-900">
-      <AdminHeader active={active} setActive={setActive} />
+      <AdminHeader active={active} setActive={setActive} onLogout={onLogout} />
       {active === 'Kelola Pegawai' ? (
         <KelolaPegawai />
       ) : active === 'Akun' ? (

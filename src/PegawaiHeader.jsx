@@ -18,7 +18,7 @@ const menuUtama = [
   { label: 'Akun', target: 'Akun' },
 ]
 
-export default function PegawaiHeader({ active, setActive }) {
+export default function PegawaiHeader({ active, setActive, onLogout }) {
   const [openPegawai, setOpenPegawai] = useState(false)
   const [openMenu, setOpenMenu] = useState(false)
   const pegawaiActive = active?.startsWith('Pegawai')
@@ -117,7 +117,7 @@ export default function PegawaiHeader({ active, setActive }) {
 
         <button
           className="ml-1 hidden rounded-full bg-slate-900 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-orange-600 sm:block"
-          onClick={() => alert('Logout')}
+          onClick={onLogout}
         >
           Logout
         </button>
@@ -140,7 +140,7 @@ export default function PegawaiHeader({ active, setActive }) {
           ))}
           <button
             className="mt-2 block w-full rounded-full bg-slate-900 px-4 py-3 text-center text-[15px] font-semibold text-white sm:hidden"
-            onClick={() => alert('Logout')}
+            onClick={onLogout}
           >
             Logout
           </button>
